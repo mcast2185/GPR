@@ -1,8 +1,21 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import type * as CSS from 'csstype';
+
 
 import Logo from "../../assets/GPRlogo.png";
+
+const style: CSS.Properties = {
+    backgroundImage: "url(/_next/static/media/stone.56a47ffb.jpg)",
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "cover",
+    position: "relative",
+    height: "240px",
+    width: "100%",
+    filter: "brightness(25%)",
+    zIndex: "-30",
+};
 
 
 const Footer = () => {
@@ -17,21 +30,23 @@ const Footer = () => {
   };
 
   return (
-    <div className='flex justify-center items-center flex-col h-[240px] w-full'>
-      <div className="footer bg-no-repeat bg-cover h-[240px] w-full relative brightness-[25%]" />
-      <div className='absolute flex justify-center items-center flex-col'>
-        <div className='image-container'>
-          <Image alt="gpr-logo" className='h-[150px] w-[160px]' src={Logo}/>
+    <div className="parentDiv flex flex-col justify-center items-center w-full h-[240px]">
+    <div className="footer" style={style}/>
+      {/* <div className='flex relative justify-center items-center flex-col h-[240px] w-full'> */}
+        <div className='absolute flex justify-center items-center flex-col'>
+          <div className='image-container'>
+            <Image alt="gpr-logo" className='h-[150px] w-[160px]' src={Logo}/>
+          </div>
+          <div className='flex flex-row'>
+            <a>{dynamicLink("/", "Home")}</a>
+            <a>{dynamicLink("/about", "About")}</a>
+            <a>{dynamicLink("/contact", "Contact")}</a>
+          </div>
+          <div className="text-slate-100">
+            <p className="font-extralight mt-10px p-0">&copy; 2022 GPR &#124; all rights reserved</p>
+          </div>
         </div>
-        <div className='flex flex-row'>
-          <a>{dynamicLink("/", "Home")}</a>
-          <a>{dynamicLink("/about", "About")}</a>
-          <a>{dynamicLink("/contact", "Contact")}</a>
-        </div>
-        <div className="text-slate-100">
-          <p className="font-extralight mt-10px p-0">&copy; 2022 GPR &#124; all rights reserved</p>
-        </div>
-      </div>
+      {/* </div> */}
     </div>
   );
 };

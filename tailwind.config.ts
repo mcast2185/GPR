@@ -16,10 +16,6 @@ module.exports = {
       'sm': {'min': '340px','max': '500px'},
     },
     extend: {
-      backgroundImage: {
-        "footer": "url(./src/assets/sudoGPReight.jpg)",
-        "home": "url(./src/assets/stone.jpg)"
-      },
       fontFamily: {
         "MajorMonoDisplay": ['Major Mono Display', 'monospace'],
         "Megrim": ["Megrim"],

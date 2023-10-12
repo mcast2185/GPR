@@ -5,7 +5,6 @@ import GPRtwo from "../../assets/sudoGPRtwo.jpg";
 import GPRthree from "../../assets/sudoGPRthree.jpg";
 import GPRfour from "../../assets/sudoGPRfour.jpg";
 import Image from 'next/image';
-import Link from 'next/link';
 
 
 
@@ -39,17 +38,14 @@ const Carousel: React.FC<CarouselProps> = ({ autoSlide = false, hideIndicators =
   }, [autoSlide, images.length]);
 
   return (
-    <div className="relative z-[-10]">
+    <div className="z-[-10] w-full h-[500px]">
       {images.map((image, index) => (
-        // <div key={index}>
           <Image
             key={index}
             src={image}
             alt={`carousel-${index}`}
-            className={` w-full h-[80vh] z-[-10] transition-opacity duration-500 ${current === index ? 'opacity-100' : 'opacity-0'}`}
+            className={`absolute w-full h-[500px] z-[-10] transition-opacity duration-500 ${current === index ? 'opacity-100' : 'opacity-0'}`}
           />
-
-        // </div>
       ))}
       {!hideIndicators && (
         <div className="absolute bottom-2 left-1/2 transform -translate-x-1/2 flex space-x-2">

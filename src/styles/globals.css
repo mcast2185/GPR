@@ -3,12 +3,4 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer components {
-  .stone {
-    background: url("../assets/stone.jpg");
-  };
-  .footer {
-    background: url("../assets/sudoGPReight.jpg");
-  } 
-}
+@import "./home.css";

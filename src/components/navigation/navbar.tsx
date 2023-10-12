@@ -1,4 +1,4 @@
-'use client';
+'use client'
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { motion, useAnimation } from "framer-motion";
@@ -16,7 +16,8 @@ const NavComponent: React.FC = () => {
   const dynamicLink = (route: string, linkText:string) => {
     return (
       <div className="">
-        <Link href={route} className='text-orange-300 hover:text-gray-300 decoration-transparent hover:scale-110 transition ease-in-out duration-500'>
+        <Link href={route} className='text-orange-300 hover:text-gray-300 
+          decoration-transparent hover:scale-110 transition ease-in-out duration-500'>
           {linkText}
         </Link>
       </div>
@@ -45,7 +46,7 @@ const NavComponent: React.FC = () => {
 
   return (
     <div className={`fixed top-0 left-0 w-full bg-opacity-50 transition-all duration-300 ease-in-out ${scrolling ? 'bg-none' : 'bg-slate-500'}`}>
-      <div className="container z-[30] mx-auto px-7 py-2 flex justify-between items-center">
+      <div className="z-[30] mx-auto px-7 py-2 flex justify-between items-center">
         {scrolling ? (
           <div className="flex items-center">
             <FontAwesomeIcon icon={faBars} className="text-orange-300 text-2xl" onClick={toggleSidebar}/>
