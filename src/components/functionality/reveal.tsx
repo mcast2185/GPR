@@ -30,7 +30,7 @@ export const Reveal = ({ children, width ="fit-content"}: Props) => {
         initial="hidden"
         animate={mainControlAnimation}
         transition={{
-          duration: .5, delay: .25
+          duration: .75, delay: .55
         }}
       >
         {children}
@@ -43,7 +43,7 @@ export const Reveal = ({ children, width ="fit-content"}: Props) => {
         initial="hidden"
         animate={slideControlAnimation}
         transition={{
-          duration: .5, ease: "easeIn"
+          duration: .75, ease: "easeIn"
         }}
         style={{
           position: 'absolute',

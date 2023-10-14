@@ -15,7 +15,7 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
   const dynamicLink = (route: string, linkText:string) => {
     return (
-      <div className="">
+      <div className=" shadow-2xl underline pb-[5px]">
         <Link href={route} className='text-orange-300 hover:text-gray-300 transition duration-300'>
           {linkText}
         </Link>
@@ -40,7 +40,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
         <div className="backdrop fixed inset-0 z-30 bg-black bg-opacity-50" onClick={handleClickOutside}>
           {/* Actual Sidebar */}
           <motion.div
-            className="fixed h-screen w-1/6 bg-white z-40 shadow-lg"
+            className="fixed h-screen w-[13.5] bg-white z-40 shadow-lg"
             initial="initial"
             animate="animate"
             exit="exit"
@@ -50,10 +50,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
              
             {/* Close Button */}
             <button className="p-4" onClick={toggleSidebar}>
-              <FontAwesomeIcon icon={faTimes} />
+              <FontAwesomeIcon className='text-slate-200 text-xl' icon={faTimes} />
             </button>
             {/* Menu Items */}
-            <div className="flex flex-col justify-center h-full space-y-4">
+            <div className="flex flex-col justify-center h-full space-y-4 pt-[55px] pl-[55px]">
               {dynamicLink("/", "Home")}
               {dynamicLink("/about", "About")}
               {dynamicLink("/services", "Services")}

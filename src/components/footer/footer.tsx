@@ -30,12 +30,12 @@ const Footer = () => {
   };
 
   return (
-    <div className="parentDiv flex flex-col justify-center items-center w-full h-[240px]">
+    <div className="parentDiv flex flex-col justify-center items-center w-full h-[33vh]">
     <div className="footer" style={style}/>
       {/* <div className='flex relative justify-center items-center flex-col h-[240px] w-full'> */}
-        <div className='absolute flex justify-center items-center flex-col'>
+        <div className='absolute flex justify-center items-center flex-col mt-[1vh]'>
           <div className='image-container'>
-            <Image alt="gpr-logo" className='h-[150px] w-[160px]' src={Logo}/>
+            <Image alt="gpr-logo" className='h-[140px] w-[150px]' src={Logo}/>
           </div>
           <div className='flex flex-row'>
             <a>{dynamicLink("/", "Home")}</a>
