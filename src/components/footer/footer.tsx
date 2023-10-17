@@ -30,7 +30,7 @@ const Footer = () => {
   };
 
   return (
-    <div className="parentDiv flex flex-col justify-center items-center w-full h-[33vh]">
+    <div className="parentDiv flex flex-col justify-center items-center w-full h-[32vh]">
     <div className="footer" style={style}/>
       {/* <div className='flex relative justify-center items-center flex-col h-[240px] w-full'> */}
         <div className='absolute flex justify-center items-center flex-col mt-[1vh]'>

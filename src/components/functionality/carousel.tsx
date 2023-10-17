@@ -26,7 +26,7 @@ const Carousel: React.FC<CarouselProps> = ({ autoSlide = false, hideIndicators =
     if (autoSlide) {
       timer = setInterval(() => {
         setCurrent((prev) => (prev === images.length - 1 ? 0 : prev + 1));
-      }, 4000);
+      }, 5500);
     };
     return () => {
       if (timer) {
@@ -36,15 +36,18 @@ const Carousel: React.FC<CarouselProps> = ({ autoSlide = false, hideIndicators =
   }, [autoSlide, images.length]);
 
   return (
-    <div className="z-[-10] w-full relative h-[500px]">
+    //zindex
+    <div className="w-full relative h-[600px]">
       {images.map((image, index) => (
-        <div key={index} className="z-[-10] flex relative">
+        // zindex
+        <div key={index} className="flex relative">
           <Image
             key={index}
             src={image}
             alt={`carousel-${index}`}
-            className={`absolute w-full h-[500px] z-[-10] transition-opacity 
-            duration-500 ${current === index ? 'opacity-100' : 'opacity-0'} brightness-75`}
+            // zindex
+            className={`absolute w-full h-[600px] transition-opacity 
+            duration-500 ${current === index ? 'opacity-100' : 'opacity-0'} brightness-[40%]`}
           />
         </div>
       ))}

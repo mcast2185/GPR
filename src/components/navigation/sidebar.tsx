@@ -37,7 +37,8 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
   return (
     <AnimatePresence mode="wait">
       {isOpen && (
-        <div className="backdrop fixed inset-0 z-30 bg-black bg-opacity-50" onClick={handleClickOutside}>
+        // zindex2
+        <div className="backdrop fixed inset-0 z-10 bg-black bg-opacity-50" onClick={handleClickOutside}>
           {/* Actual Sidebar */}
           <motion.div
             className="fixed h-screen w-[13.5] bg-white z-40 shadow-lg"
@@ -68,80 +69,3 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar }) => {
 };
 
 export default Sidebar;
-
-
-
-
-// import React, {useState} from 'react';
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { Offcanvas, Button }from "react-bootstrap";
-
-// import logo from "../../assets/GPRlogoBlack.png";
-// import Image from 'next/image';
-
-
-
-// const NavBarMenu = () => {
-//   const options = [
-//     {
-//       name: <FontAwesomeIcon icon="ellipsis" />,
-//       scroll: true,
-//       backdrop: true,
-//     }
-//   ];
-  
-//   function ClickMenu({ name, ...props }: string | any) {
-//     const [show, setShow] = useState(false);
-  
-//     const handleClose = () => setShow(false);
-//     const toggleShow = () => setShow((s) => !s);
-  
-//     return (
-//       <div>
-//         <Button variant="primary" onClick={toggleShow} className="me-2">
-//           {name}
-//         </Button>
-//         <Offcanvas show={show} onHide={handleClose} {...props}>
-//           <Offcanvas.Header closeButton>
-//             <Offcanvas.Title>Our Services</Offcanvas.Title>
-//           </Offcanvas.Header>
-//           <Offcanvas.Body>
-//             <ul className='onClick-menu-list'>
-//               <li><a>Concrete</a> </li>
-//               <li> <a>Shortcrete</a></li>
-//               <li> <a>Demolition</a></li>
-//             </ul>
-//             <div className='onClick-menu-list-nav-links'>
-//               <div className='links'>
-//                 <a href="/">Home</a>
-//                 <a href="/about">About</a>
-//                 <a href="/contact">Contact</a>
-//               </div>
-//             </div>
-//             <div className='onClick-menu-logo'>
-//               <Image alt="gpr logo" src={logo} />
-//             </div>
-//           </Offcanvas.Body>
-//         </Offcanvas>
-//       </div>
-//     );
-//   }
-  
-//   function Menu() {
-//     return (
-//       <div>
-//         {options.map((props, idx) => (
-//           <ClickMenu key={idx} {...props} />
-//         ))}
-//       </div>
-//     );
-//   }
-  
-//   return (
-//     <div>
-//       <Menu />
-//     </div>
-//     );
-// }
-
-// export default NavBarMenu;

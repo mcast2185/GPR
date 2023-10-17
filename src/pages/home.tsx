@@ -1,32 +1,69 @@
 'use client';
 import Image from 'next/image';
-import React from 'react';
+import React, { ReactNode, useEffect } from 'react';
+import { motion, useAnimate, useTransform, } from 'framer-motion';
 
+
+import GPR from "../assets/GPRlabel.png";
+import STONE from "../assets/stone.jpg";
 import GPRsix from "../assets/sudoGPRsix.jpg";
 import GPRfive from "../assets/sudoGPRfive.jpg";
-import Footer from '../components/footer/footer';
 import GPRseven from "../assets/sudoGPRseven.jpg";
-import { Reveal } from '@/components/functionality/reveal';
+import Footer from '../components/footer/footer';
 import Carousel from '../components/functionality/carousel';
+import { Reveal } from '@/components/functionality/reveal';
+import CardComponent from '@/components/motionCard/cardDetail';
 
-
-const Home = () => {
+const Home: React.FC = () => {
+  
 
   return (
-    <div >
-      <div className='stone' style={{width: "100%", height: "100%"}}/>
-      <div className='grid grid-flow-row gap-16'>
-        <div className="row-1 gap-2" >         
+    <div>
+      <Image src={STONE} role="img" sizes="100vh 100vw"  style={
+        {
+          backgroundImage: `url("/_next/static/media/stone.56a47ffb.jpg")`, 
+          opacity: ".3",
+          position: "fixed",
+          zIndex: "-10",
+          objectFit: "contain",
+          width: "100vw",
+          height: "100vh",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat", 
+          backgroundSize: "cover"}} 
+          alt="testing" 
+        />
+      <div className='grid grid-flow-row gap-32'>
+        <div>         
           <Carousel autoSlide={true} hideIndicators={true}/>
         </div>
-        <div className="bg-stone-800 border-[#99720f] bg-opacity-40 
-          h-[80px] w-[800px] flex justify-center items-center relative left-[24vw]">
-          <h1 className="text-slate-200 text-4xl font-Oswald underline decoration-1 font-extrabold decoration-[#99720f]">
-            GPR Construction From the Ground up  
-          </h1>
+        <div className="h-[auto] w-[auto] absolute left-[28vw] right-[28vw] top-[10vh] animate-pulse">
+          <Image alt="GPR home page image" className='h-[350px] w-[650px]' src={GPR}/>
+        </div>
+
+        <div className="h-[450px] w-[100vw] flex flex-col justify-center items-center content-center py-[10px] relative">
+          <div className="flex flex-col justify-center items-center content-center py-[3.5rem]">
+            <h2 className="font-Anton bg-slate-200 bg-clip-text text-slate-800 text-opacity-70 p-[1.5px]">
+              We Specialize in full-Service Concrete Contracts
+            </h2> 
+            <h1 className="font-Anton text-[50px] bg-slate-200 bg-clip-text text-slate-800 text-opacity-70 p-[1.5px]">
+              GPR Construction of San Diego
+            </h1>
+            <h2 className="font-Anton bg-slate-200 bg-clip-text text-slate-800 text-opacity-70 p-[1.5px]">
+              We are your go-to for all of your roofing and remodeling needs. 
+            </h2> 
+            <div className="border border-[#e9a106] rounded-full hover:border-slate-200 font-Anton">
+              <button className='text-base text-slate-800 p-[3px] bg-slate-200 hover:bg-[#e9a106] rounded-full
+                hover:text-slate-200 ease-in-out duration-[1000ms] hover:scale-[1.02]' type='button' onClick={() => {}}>
+                Get Started Here
+              </button>
+            </div>
+          </div>
+          <CardComponent/>
         </div>
         <div className='flex flex-col justify-between row-2 mt-[50px]'>
-          <div className='z-[10] pl-[13vw] pr-[7vw] flex justify-between flex-row items-center'>
+
+          <div className=' pl-[13vw] pr-[7vw] flex justify-between flex-row items-center'>
             <div className='p-[20px] pl-[10px] h-[250px] w-[40vw] relative'>
               <Reveal>
                 <h2 className="w-fit text-slate-700 text-2xl font-Anton">
@@ -39,10 +76,10 @@ const Home = () => {
                 </h3>
               </Reveal>
               <Reveal>
-                <div className="bg-slate-700 bg-opacity-0 shadow-lg shadow-black duration-[2000ms] ease-in-out 
-                  rounded hover:bg-right-bottom hover:bg-opacity-20 hover:bg-slate-700 hover:scale-[1.02] transition-transform">
+                <div className=" duration-[2000ms] ease-in-out 
+                  rounded hover:scale-[1.01] transition-transform">
                   <p className="font-Oswald font-light p-[10px] text-slate-600 ease-in-out 
-                    duration-[1500ms] transition-transform hover:text-slate-200 hover:shadow-2xl hover:scale-[1.01]">
+                    duration-[1500ms] transition-transform drop-shadow-lg shadow-black hover:scale-[1.01]">
                     <span>G</span>PR Construction has a proven record of excellence in efficiently managing several construction 
                     projects throughout the San Diego county and other surrounding areas as well. Your local crew of experienced professionals here at 
                     GPR Construction will plan, design, construct, and maintain your project, just as you invisioned.
@@ -55,41 +92,53 @@ const Home = () => {
               src={GPRsix}
             />          
           </div>
-          <div className='z-[-10] flex justify-center items-center p-[20px] '>
+
+          <div className='pr-[7vw] pl-[13vw] flex justify-between flex-row items-center'>
+          {/* <div className=' flex justify-center items-center p-[20px] '> */}
             <Image alt='gpr image' 
               className='w-[500px] h-[333px]' 
               src={GPRseven}
             />
-            <div className='p-[20px] h-[250px] w-[30vw] object-contain'>
+            <div className='p-[20px] pl-[10px] h-[250px] w-[40vw] relative'>
+            {/* <div className='p-[20px] h-[250px] w-[30vw] object-contain'> */}
               <Reveal>
                 <h2 className="w-fit p-[10px] text-slate-700 text-2xl font-Anton">
                   Our Foundation
                 </h2>
               </Reveal>
               <Reveal>
-                <p className="font-Oswald font-light p-[10px] text-slate-400 ease-in-out 
-                  duration-[1500ms] transition-transform hover:text-[#99720f] hover:shadow-2xl hover:scale-[1.025]">
+                <div className=" duration-[2000ms] ease-in-out 
+                  rounded hover:scale-[1.01] transition-transform">
+                  <p className="font-Oswald font-light p-[10px] text-slate-600 ease-in-out 
+                    duration-[1500ms] transition-transform drop-shadow-lg shadow-black hover:scale-[1.01]">
                   <span>T</span>his is some text i just used to fill the void i will be using.this is some text i just used to fill the void i will be using
                     this is some text i just used to fill the void i will be using.this is some text i just used to fill the void i will be using.
                     this is some text i just used to fill the void i will be using.this is some text i just used to fill the void i will be using
                 </p>
+                </div>
               </Reveal>
             </div>
           </div>   
-          <div className='z-[-10] flex justify-center items-center p-[20px]'>
-            <div className='p-[20px] h-[250px] w-[30vw] object-contain'>
+
+          {/* <div className=' flex justify-center items-center p-[20px]'>
+            <div className='p-[20px] h-[250px] w-[30vw] object-contain'> */}
+          <div className=' pl-[13vw] pr-[7vw] flex justify-between flex-row items-center'>
+            <div className='p-[20px] pl-[10px] h-[250px] w-[40vw] relative'>
               <Reveal>
                 <h2 className=" p-[10px] w-fit text-slate-700 text-2xl font-Anton">
                   Our Portfolio
                 </h2>
               </Reveal>
               <Reveal>
-                <p className=" p-[10px] font-Oswald font-light text-slate-400 ease-in-out 
-                  duration-[1500ms] transition-transform hover:text-[#99720f] hover:shadow-2xl hover:scale-[1.025]">
+                <div className=" duration-[2000ms] ease-in-out 
+                  rounded hover:scale-[1.02] transition-transform">
+                  <p className="font-Oswald font-light p-[10px] text-slate-600 ease-in-out 
+                    duration-[1500ms] transition-transform drop-shadow-lg shadow-black hover:scale-[1.01]">
                   <span>T</span>his is some text i just used to fill the void i will be using.this is some text i just used to fill the void i will be using
                     this is some text i just used to fill the void i will be using.this is some text i just used to fill the void i will be using.
                     this is some text i just used to fill the void i will be using.this is some text i just used to fill the void i will be using
                 </p>
+                </div>
               </Reveal>
             </div>
             <Image alt="gpr image" 
