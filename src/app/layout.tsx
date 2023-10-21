@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google'
 import '../styles/globals.css'
 import Icons from '@/components/helpers/icons'
 import NavComponent from '@/components/navigation/navbar'
+import Head from './head'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,10 +21,11 @@ export default function RootLayout({
   Icons();
   return (
     <html className="p-0 m-0" lang="en">
+      <Head/>
       <body className={`p-0 m-0 ${inter.className}`}>
         <NavComponent/>
         {children}
       </body>
     </html>
   )
-}
+};

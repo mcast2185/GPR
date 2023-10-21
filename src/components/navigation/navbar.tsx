@@ -64,7 +64,7 @@ const NavComponent: React.FC = () => {
              <Image src={Logo} className='h-[70px] w-[75px] absolute left-[5px] top-[-8px]' alt="gpr logo"/>
             </div>
             <motion.div initial={{ opacity: 0 }} animate={controls} 
-              className="flex justify-center items-center content-center space-x-3">
+              className="flex justify-center  content-center space-x-3">
               {dynamicLink("/", "Home")}
               <p className='text-white pl-1'>|</p>
               {dynamicLink("/about", "About")}

@@ -11,7 +11,7 @@ const style: CSS.Properties = {
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover",
     position: "relative",
-    height: "240px",
+    height: "15rem",
     width: "100%",
     filter: "brightness(25%)",
     zIndex: "-30",
@@ -30,12 +30,12 @@ const Footer = () => {
   };
 
   return (
-    <div className="parentDiv flex flex-col justify-center items-center w-full h-[32vh]">
+    <div className="parentDiv flex flex-col justify-center items-center w-full h-[fit]">
     <div className="footer" style={style}/>
       {/* <div className='flex relative justify-center items-center flex-col h-[240px] w-full'> */}
         <div className='absolute flex justify-center items-center flex-col mt-[1vh]'>
           <div className='image-container'>
-            <Image alt="gpr-logo" className='h-[140px] w-[150px]' src={Logo}/>
+            <Image alt="gpr-logo" className='h-[125px] w-[135px]' src={Logo}/>
           </div>
           <div className='flex flex-row'>
             <a>{dynamicLink("/", "Home")}</a>
@@ -43,7 +43,7 @@ const Footer = () => {
             <a>{dynamicLink("/contact", "Contact")}</a>
           </div>
           <div className="text-slate-100">
-            <p className="font-extralight mt-10px p-0">&copy; 2022 GPR &#124; all rights reserved</p>
+            <p className="font-extralight mt-6px p-0">&copy; 2022 GPR &#124; all rights reserved</p>
           </div>
         </div>
       {/* </div> */}

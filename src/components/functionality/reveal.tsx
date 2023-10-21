@@ -4,9 +4,10 @@ import { motion, useInView, useAnimation } from 'framer-motion';
 interface Props {
   children: JSX.Element;
   width?: "fit-content" | "100%";
+  transition: { duration: number, delay: number}
 }
 
-export const Reveal = ({ children, width ="fit-content"}: Props) => {
+export const Reveal = ({ children, width ="fit-content", transition}: Props) => {
   const ref = useRef(null);
   const isInView = useInView(ref, {once: true});
   const mainControlAnimation = useAnimation();
@@ -29,7 +30,7 @@ export const Reveal = ({ children, width ="fit-content"}: Props) => {
         }}
         initial="hidden"
         animate={mainControlAnimation}
-        transition={{duration: .75, delay: .55}}
+        transition={{duration: .75, delay: .55, ease: "easeInOut"}}
       >
         {children}
       </motion.div>
@@ -40,7 +41,7 @@ export const Reveal = ({ children, width ="fit-content"}: Props) => {
         }}
         initial="hidden"
         animate={slideControlAnimation}
-        transition={{duration: .75, ease: "easeIn"}}
+        transition={{duration: .75, ease: "easeInOut"}}
         style={{
           position: 'absolute',
           top: 4,

@@ -1,24 +1,69 @@
 .flip-card {
   perspective: 1000px;
 }
-
 .flip-card-inner {
   transition: transform 0.6s;
   transform-style: preserve-3d;
 }
-
 .flip-card-front,
 .flip-card-back {
   position: absolute;
   backface-visibility: hidden;
-
 }
-
 .flip-card-back {
   transform: rotateY(180deg);
 }
 
-.summary-section{
-  text-shadow: .5px .5px .5px rgb(71 85 105);
 
+.about-container-bg { 
+  background-image: url("../assets/sudoGPReight.jpg");
+}
+.fade-component {
+  overflow: hidden;
+}
+
+
+.btn {
+  width: 80px;
+  height: 45px;
+  border-radius: 50px;
+  border: 1px solid #e9a106;
+  background: transparent;
+  cursor: pointer;
+}
+
+.gallery {
+  height: 175vh;
+  background: rgb(45,45,45);
+  display: flex;
+  flex-direction: row;
+  gap: 2vw;
+  padding: 2vw;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+.gallery.column {
+  width: 25%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+  min-width: 250px;
+  position: relative;
+}
+.gallery.gallery.column.imageContainer {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 1vw;
+  overflow: hidden;
+}
+.gallery.gallery.column.imageContainer img {
+ object-fit: cover;
+}
+.spacer {
+  height: 100vh;
+}
+.gallery.column:nth-of-type(1) {
+  top: -45%;
 }
